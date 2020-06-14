@@ -12,12 +12,17 @@ def test_invalid_point_generation():
         Point("Senegal", 99.6937, -189.44406)
     assert str(exp.value) == "Invalid latitude, longitude combination."
 
-    """
-    Your solution here! You will need to edit the following source code
-    file to get your test running:
 
-        File path:
-        scripts/chp2/video4/mapmaker_challenge import
-
-    It has already been imported for you on the first line of this file
+def test_invalid_city_name():
     """
+        Your solution here! You will need to edit the following source code
+        file to get your test running:
+
+            File path:
+            scripts/chp2/video4/mapmaker_challenge import
+
+        It has already been imported for you on the first line of this file
+    """
+    with pytest.raises(TypeError) as exp:
+        Point(563, 89, 120)
+    assert str(exp.value) == 'City name should be a string'
